@@ -54,10 +54,9 @@ public class MainActivity2 extends AppCompatActivity {
         Charset encoding = Charset.forName("CP437");
 
         byte[] nombreproducto= "Descripcion del Producto".getBytes(encoding);
-        byte[] descripcionproducto = "Descripcion del producto dos".getBytes(encoding);
-        byte[] codigointerno = ("Codigo Interno: "+ "123456789").getBytes(encoding);
+        byte[] codigointerno = ("Codigo Interno: "+ "1234").getBytes(encoding);
         byte[] codigobarra = ("1234567895215").getBytes();
-        byte[] precio = ("$:"+"150,00").getBytes();
+        byte[] precio = ("$:"+"150").getBytes();
 
         ICommandBuilder builder = StarIoExt.createCommandBuilder(StarIoExt.Emulation.StarPRNTL);
 
@@ -71,10 +70,6 @@ public class MainActivity2 extends AppCompatActivity {
         builder.appendAbsolutePosition(nombreproducto,10);
         builder.appendLineFeed();
         builder.appendLineSpace(24);
-
-        builder.appendAbsolutePosition(descripcionproducto,10);
-        builder.appendLineFeed();
-
 
         builder.appendAbsolutePosition(codigointerno,10);
         builder.appendMultiple(3, 3);
